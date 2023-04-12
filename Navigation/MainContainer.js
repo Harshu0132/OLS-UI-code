@@ -26,7 +26,11 @@ const MainContainer = () => {
   }, []);
 
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName="BookNow"> 
+    {/* <Tab.Navigator initialRouteName="Account"> */}
+    {/* <Tab.Navigator initialRouteName="Home"> */}
+    {/* <Tab.Navigator initialRouteName="Orders"> */}
+    {/* <Tab.Navigator initialRouteName="Menu"> */}
       <Tab.Screen
         name="Home"
         component={HomeScreen}

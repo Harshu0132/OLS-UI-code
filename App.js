@@ -12,15 +12,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          // mobileTiitle="Enter Mobile Number"
-          // OTPTitle="We will send OTP to your Mobile Number"
-          // buttonTitle="Login"
-        />
-        <Stack.Screen name="Register" component={Register} />
+        {/* <Stack.Screen name="LoginScreen" component={LoginScreen} /> */}
+        {/* <Stack.Screen */}
+          {/* name="Login" */}
+          {/* component={Login} */}
+         {/* /> */}
+        {/* <Stack.Screen name="Register" component={Register} /> */}
         <Stack.Screen name="MainContainer" component={MainContainer} />
       </Stack.Navigator>
     </NavigationContainer>

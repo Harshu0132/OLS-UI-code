@@ -13,6 +13,7 @@ const AccountScreen = ({Navigation}) => {
   return (
     <SafeAreaView className="flex-1 justify-center items-center bg-red-100">
       <Text>AccountScreen</Text>
+      <Text>Hello Krunal</Text>
       <Button
         title="Click Here"
         onPress={()=>alert('Button Clicked!')}
