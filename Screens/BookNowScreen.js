@@ -1,6 +1,7 @@
 import { View, Text, SafeAreaView, TouchableOpacity,Button } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
+import SteamPress from "../Components/SteamPress";
 
 const BookNowScreen = ({Navigation}) => {
   const navigation = useNavigation();
@@ -12,11 +13,7 @@ const BookNowScreen = ({Navigation}) => {
   }, []);
   return (
     <SafeAreaView className="flex-1 justify-center items-center bg-red-100">
-      <Text>BookNowScreen</Text>
-      <Button
-        title="Click Here"
-        onPress={()=>alert('Button Clicked!')}
-      ></Button>
+      <SteamPress/>
     </SafeAreaView>
   )
 }
