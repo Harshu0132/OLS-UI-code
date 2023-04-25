@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const SteamPress = () => {
+const PricingCard = () => {
   return (
     <View>
-      <Text>SteamPress</Text>
+      <Text>PricingCard</Text>
     </View>
   )
 }
 
-export default SteamPress
+export default PricingCard
