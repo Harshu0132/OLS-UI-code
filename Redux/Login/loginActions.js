@@ -18,7 +18,7 @@ export const login = (phone) => async (dispatch) => {
         };
 
         const { data } = await axios.post("http://192.168.77.145:3000/api/user/login", obj, config);
-
+        
         dispatch({
             type: LOGIN_SUCCESS,
             payload: data

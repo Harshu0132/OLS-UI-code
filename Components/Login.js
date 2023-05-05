@@ -28,9 +28,9 @@ const Login = (mobileTiitle, OTPTitle, buttonTitle) => {
   const sendOtp = () => {
     dispatch(login(phone))
     // console.warn(userLogin);
-    // navigation.navigate('LoginVerificationScreen', {
-    //   phone: phone
-    // })
+    navigation.navigate('LoginVerificationScreen', {
+      phone: phone
+    })
   }
 
   useEffect(() => {

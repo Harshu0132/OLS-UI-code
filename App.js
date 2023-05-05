@@ -13,19 +13,17 @@ import { Provider } from 'react-redux'
 
 export default function App() {
   const Stack = createNativeStackNavigator();
-
-
   return (
     <Provider store={myStore}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="LoginScreen">
+        <Stack.Navigator initialRouteName="Register">
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="LoginVerificationScreen" options={{ title: 'LOG IN' }} component={LoginVerificationScreen} />
           {/* <Stack.Screen */}
           {/* name="Login" */}
           {/* component={Login} */}
           {/* /> */}
-          {/* <Stack.Screen name="Register" component={Register} /> */}
+          <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="MainContainer" component={MainContainer} />
           <Stack.Screen name="Notification" component={Notification} />
           <Stack.Screen name="PricingCard" component={PricingCard} />
@@ -34,3 +32,4 @@ export default function App() {
     </Provider>
   );
 }
+
