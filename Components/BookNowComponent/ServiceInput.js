@@ -1,9 +1,12 @@
 import { View, Text, ScrollView, Image, Button, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import SteamPress from '../../assets/Icons/steam-press.png'
 import WashingAndFold from '../../assets/Icons/washing-fold.png'
 import WashingAndIron from '../../assets/Icons/washing-iron.png'
+import { createOrder } from '../../Redux/Order/orderActions'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigation } from '@react-navigation/native'
 
 
 const ServiceInput = () => {
@@ -46,7 +49,37 @@ const ServiceInput = () => {
     setWashingIron('Washing & Ironing')
   }
 
-  
+  const userOrder = useSelector((state) => state.userOrder);
+  const { error, loading, payload, success } = userOrder;
+  const dispatch = useDispatch()
+
+  const navigation = useNavigation();
+
+
+  const submitHandler = () => {
+    const service = steamPress ? steamPress : (washingAndFold ? washingAndFold : WashingIron)
+
+    let obj = {
+      service: service,
+      date: date,
+      time: time,
+      userId: '64559b8ce8963451d1aa0566'
+    }
+    console.log(obj);
+
+    dispatch(createOrder(obj))
+  }
+
+  useEffect(() => {
+    // console.log(loading);
+    // console.log(payload);
+
+    if (!loading && success) {
+      console.log(payload);
+      navigation.navigate('Orders');
+    }
+  }, [payload, loading])
+
 
   return (
     <View>
@@ -150,7 +183,7 @@ const ServiceInput = () => {
       </View>
 
       <TouchableOpacity className='bg-[#017ebe] w-full rounded-md my-5 p-2'>
-        <Text className='text-white text-center'>Proceed</Text>
+        <Text className='text-white text-center' onPress={submitHandler}>Proceed</Text>
       </TouchableOpacity>
     </View>
   )

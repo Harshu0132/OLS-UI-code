@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL, LOGIN_RESET } from './loginConstants'
 
+
 export const login = (phone) => async (dispatch) => {
     try {
         dispatch({
@@ -17,13 +18,13 @@ export const login = (phone) => async (dispatch) => {
             },
         };
 
-        const { data } = await axios.post("http://192.168.77.145:3000/api/user/login", obj, config);
-        
+        const { data } = await axios.post("http://192.168.158.145:3000/api/user/login", obj, config);
+        // const { data } = await axios.post("http://localhost:3000/api/user/login", obj, config);
+
         dispatch({
             type: LOGIN_SUCCESS,
             payload: data
         })
-
 
     } catch (error) {
         // console.log("error", error);

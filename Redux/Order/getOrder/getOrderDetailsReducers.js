@@ -1,27 +1,26 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL, LOGIN_RESET } from './loginConstants'
+import { GET_ORDER_REQUEST, GET_ORDER_SUCCESS, GET_ORDER_FAIL, GET_ORDER_RESET } from './getOrderDetailsConstants'
 
 
-export const loginReducer = (state = {}, action) => {
+export const getOrderDetailsReducers = (state = [], action) => {
     switch (action.type) {
-        case LOGIN_REQUEST:
+        case GET_ORDER_REQUEST:
             return {
                 loading: true
             }
-        case LOGIN_SUCCESS:
+        case GET_ORDER_SUCCESS:
             return {
                 loading: false,
                 success: true,
                 payload: action.payload,
             }
 
-        case LOGIN_FAIL:
+        case GET_ORDER_FAIL:
             return {
                 loading: false,
-                success: false,
                 error: action.payload
             }
 
-        case LOGIN_RESET:
+        case GET_ORDER_RESET:
             return {}
         default:
             return state;

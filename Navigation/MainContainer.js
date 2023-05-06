@@ -25,8 +25,10 @@ const MainContainer = () => {
     });
   }, []);
 
+
+
   return (
-    <Tab.Navigator initialRouteName="BookNow">
+    <Tab.Navigator initialRouteName="Home">
       {/* <Tab.Navigator initialRouteName="BookNow">  */}
 
       <Tab.Screen

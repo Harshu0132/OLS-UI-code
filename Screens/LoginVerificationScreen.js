@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { otpVerify } from '../Redux/OtpVerification/otpVerificationActions';
 import { useNavigation } from "@react-navigation/native";
 
+
 const LoginVerificationScreen = ({ route }) => {
     const { phone } = route.params;
     // const phone = 9923527956
@@ -24,10 +25,10 @@ const LoginVerificationScreen = ({ route }) => {
     };
     
     useEffect(() => {
-        console.log(success);
-        console.log(data);
+        // console.log(success);
+        // console.log(data);
 
-        console.log(timeLeft);
+        // console.log(timeLeft);
         if(success){
             navigation.navigate('MainContainer');
             console.warn(data);

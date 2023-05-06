@@ -3,11 +3,15 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import userLogin from '../Login/index'
 import otpVerifiedData from "../OtpVerification/index";
 import userRegister from '../Register/index'
+import userOrder from '../Order/index'
+import getOrder from "../Order/getOrder/index";
 
 const reducer = combineReducers({
     ...userLogin,
     ...otpVerifiedData,
-    ...userRegister
+    ...userRegister,
+    ...userOrder,
+    ...getOrder
 })
 
 

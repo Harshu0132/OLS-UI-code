@@ -22,6 +22,7 @@ const BookNowScreen = ({ Navigation }) => {
           </TouchableOpacity>
           <Text className='ml-2 font-medium' >Book Now</Text>
         </View>
+        {/* Service Input */}
         <ServiceInput />
       </View>
     </SafeAreaView>

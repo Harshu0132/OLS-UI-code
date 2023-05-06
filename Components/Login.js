@@ -19,11 +19,11 @@ const Login = (mobileTiitle, OTPTitle, buttonTitle) => {
 
 
   const userLogin = useSelector((state) => state.userLogin);
-  const { error, loading, payload } = userLogin;
+  const { error, loading, payload, success } = userLogin;
 
   const disabledNextButton = (phone) => {
     return phone?.length !== 10 ? true : false
-  }
+  } 
 
   const sendOtp = () => {
     dispatch(login(phone))
@@ -34,14 +34,15 @@ const Login = (mobileTiitle, OTPTitle, buttonTitle) => {
   }
 
   useEffect(() => {
-    console.log(loading);
-    console.log(payload);
-    if (!loading && payload) {
+    if (!loading && payload && success) {
       navigation.navigate('LoginVerificationScreen', {
         phone: phone
       });
     }
-  }, [payload, loading])
+    else if(error){
+      console.warn(error.response.data.msg);
+    }
+  }, [payload, loading, error, success])
 
   return (
     <SafeAreaView className="mt-5 p-3">

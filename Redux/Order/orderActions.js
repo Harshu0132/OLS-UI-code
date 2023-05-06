@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAIL, REGISTER_RESET } from './registerConstants'
+import { ORDER_REQUEST, ORDER_SUCCESS, ORDER_FAIL, ORDER_RESET } from './orderConstants'
 
 
-export const register = (obj) => async (dispatch) => {
+export const createOrder = (obj) => async (dispatch) => {
     try {
         dispatch({
-            type: REGISTER_REQUEST,
+            type: ORDER_REQUEST,
         })
 
         const config = {
@@ -14,17 +14,17 @@ export const register = (obj) => async (dispatch) => {
             },
         };
 
-        const { data } = await axios.post("http://192.168.158.145:3000/api/user/register", obj, config);
+        const { data } = await axios.post("http://192.168.158.145:3000/api/order/createOrder", obj, config);
 
         dispatch({
-            type: REGISTER_SUCCESS,
+            type: ORDER_SUCCESS,
             payload: data
         })
 
     } catch (error) {
         // console.log("error", error);
         dispatch({
-            type: REGISTER_FAIL,
+            type: ORDER_FAIL,
             payload: error
         })
     }

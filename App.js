@@ -19,10 +19,6 @@ export default function App() {
         <Stack.Navigator initialRouteName="Register">
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="LoginVerificationScreen" options={{ title: 'LOG IN' }} component={LoginVerificationScreen} />
-          {/* <Stack.Screen */}
-          {/* name="Login" */}
-          {/* component={Login} */}
-          {/* /> */}
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="MainContainer" component={MainContainer} />
           <Stack.Screen name="Notification" component={Notification} />

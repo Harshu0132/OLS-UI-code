@@ -18,13 +18,12 @@ export const otpVerify = (otp) => async (dispatch) => {
             },
         };
 
-        const { data } = await axios.post("http://192.168.43.145:3000/api/user/verifyUser", obj, config);
+        const { data } = await axios.post("http://192.168.158.145:3000/api/user/verifyUser", obj, config);
 
         dispatch({
             type: OTP_VERIFICATION_SUCCESS,
             payload: data
         })
-
 
     } catch (error) {
         // console.log("error", error);

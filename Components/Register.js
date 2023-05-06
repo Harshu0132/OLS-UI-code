@@ -35,12 +35,14 @@ const Register = () => {
 
   const signUp = () => {
     if (validationError()) {
+      // console.warn(userName);
       let obj = {
         username: userName,
         email: email,
         password: password,
         phone: phone
       }
+      console.log(obj);
       dispatch(register(obj))
 
     } else {
@@ -48,10 +50,6 @@ const Register = () => {
     }
   }
 
-
-  // const disabledButton = (phone) => {
-  //   return phone?.length !== 10 ? true : false
-  // }
 
 
   const validationError = () => {
@@ -89,7 +87,7 @@ const Register = () => {
             style={{
               fontSize: 20,
             }}
-            onChange={(e) => setUserName(e)}></TextInput>
+            onChangeText={(e) => setUserName(e)}></TextInput>
         </View>
         <View className="p-2 border-t-0 border-b-2 my-3 border-gray-300">
           <TextInput
@@ -99,7 +97,7 @@ const Register = () => {
             style={{
               fontSize: 20,
             }}
-            onChange={(e) => setEmail(e)}></TextInput>
+            onChangeText={(e) => setEmail(e)}></TextInput>
         </View>
         <View className="p-2 border-t-0 border-b-2 my-3 border-gray-300">
           <TextInput
@@ -109,7 +107,7 @@ const Register = () => {
             style={{
               fontSize: 20,
             }}
-            onChange={(e) => setPhone(e)}></TextInput>
+            onChangeText={(e) => setPhone(e)}></TextInput>
         </View>
         <View className="p-2 border-t-0 border-b-2 my-3 border-gray-300">
           <TextInput
@@ -119,12 +117,11 @@ const Register = () => {
             style={{
               fontSize: 20,
             }}
-            onChange={(e) => setPassword(e)}></TextInput>
+            onChangeText={(e) => setPassword(e)}></TextInput>
         </View>
 
         <Button
           title="Register"
-          // disabled={disabledButton(phone)}
           onPress={signUp}
         />
         <View className="m-2 mx-5">

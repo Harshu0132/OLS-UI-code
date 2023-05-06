@@ -54,7 +54,6 @@ const LoginScreen = (mobileTitle, OTPTitle, Button) => {
                 <Text className='text-center ml-1 font-medium text-sky-600' onPress={register}>Register</Text>
               </TouchableOpacity>
             </View>
-
           </View>
         </View>
 
